@@ -1,11 +1,15 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        steps("installing packages"){
-            sh ."pip install -r requirements.txt"
+    stages {
+        stage('Install Packages') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
         }
-        steps("running the code"){
-            sh. "python main.py"
+        stage('Run Code') {
+            steps {
+                sh 'python main.py'
+            }
         }
     }
 }
