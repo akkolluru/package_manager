@@ -1,3 +1,3 @@
 import requests
-response = requests.get("www.google.com")
-print(response.get_status())
+response = requests.get("https://www.google.com")
+print(response.status_code)
